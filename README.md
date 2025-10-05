@@ -1,59 +1,129 @@
-# MongoDB Fundamentals - Week 1
+📚 MongoDB Data Layer – Fundamentals and Advanced Techniques
+🧠 Overview
 
-## Setup Instructions
+This project demonstrates how to:
 
-Before you begin this assignment, please make sure you have the following installed:
+Connect to MongoDB using Node.js
 
-1. **MongoDB Community Edition** - [Installation Guide](https://www.mongodb.com/docs/manual/administration/install-community/)
-2. **MongoDB Shell (mongosh)** - This is included with MongoDB Community Edition
-3. **Node.js** - [Download here](https://nodejs.org/)
+Populate a database with sample data
 
-### Node.js Package Setup
+Perform CRUD operations
 
-Once you have Node.js installed, run the following commands in your assignment directory:
+Run advanced queries, aggregation pipelines, and indexing
 
-```bash
-# Initialize a package.json file
+It’s built using the MongoDB Node.js Driver and uses dotenv for environment configuration.
+
+⚙️ Requirements
+
+Before running the scripts, make sure you have:
+
+Node.js installed (v16 or higher)
+
+MongoDB installed and running locally on mongodb://localhost:27017
+
+Internet connection (optional if using MongoDB Atlas)
+
+📦 Installation Steps
+
+Clone or download this folder
+
+cd mongodb-data-layer-fundamentals-and-advanced-techniques-Ivyliz25
+
+
+Initialize npm (if not already done)
+
 npm init -y
 
-# Install the MongoDB Node.js driver
-npm install mongodb
-```
 
-## Assignment Overview
+Install dependencies
 
-This week focuses on MongoDB fundamentals including:
-- Creating and connecting to MongoDB databases
-- CRUD operations (Create, Read, Update, Delete)
-- MongoDB queries and filters
-- Aggregation pipelines
-- Indexing for performance
+npm install mongodb dotenv
 
-## Submission
 
-Complete all the exercises in this assignment and push your code to GitHub using the provided GitHub Classroom link.
+Create a .env file in the project root:
 
-## Getting Started
+MONGODB_URI=mongodb://localhost:27017
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Install MongoDB locally or set up a MongoDB Atlas account
-4. Run the provided `insert_books.js` script to populate your database
-5. Complete the tasks in the assignment document
+🗃️ Step 1 – Insert Sample Data
 
-## Files Included
+Run the following command to populate your MongoDB database with sample books:
 
-- `Week1-Assignment.md`: Detailed assignment instructions
-- `insert_books.js`: Script to populate your MongoDB database with sample book data
+node insert_books.js
 
-## Requirements
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- MongoDB Shell (mongosh) or MongoDB Compass
+This will:
 
-## Resources
+Connect to the plp_bookstore database
 
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [MongoDB University](https://university.mongodb.com/)
-- [MongoDB Node.js Driver](https://mongodb.github.io/node-mongodb-native/) 
+Drop the existing books collection (if it exists)
+
+Insert 12 sample book documents
+
+Print the inserted data in your terminal
+
+✅ Example output:
+
+Connected to MongoDB server
+Collection dropped successfully
+12 books were successfully inserted into the database
+Connection closed
+
+🔍 Step 2 – Run Queries and Aggregations
+
+After inserting the data, run:
+
+node queries.js
+
+
+This script demonstrates:
+
+Basic CRUD (Create, Read, Update, Delete)
+
+Advanced queries (sorting, filtering, pagination)
+
+Aggregation pipelines (grouping, averages)
+
+Indexing and query performance inspection
+
+✅ Example output:
+
+Connected to MongoDB
+📚 Fiction Books:
+[ { title: "Haunting Adeline", ... } ]
+💰 Average price of books by genre:
+[ { _id: "Romance", avgPrice: 12.24 }, ... ]
+🏆 Author with the most books:
+[ { _id: "Colleen Hoover", count: 3 } ]
+Connection closed
+
+📘 Folder Structure
+mongodb-data-layer-fundamentals-and-advanced-techniques-Ivyliz25/
+├── insert_books.js       # Seeds MongoDB with book data
+├── queries.js            # Performs queries, aggregations, and indexing
+├── .env                  # Stores MongoDB connection URI
+├── package.json
+└── README.md
+
+🧹 Troubleshooting
+
+Error: Cannot find module 'dotenv'
+➡ Run npm install dotenv
+
+Error: MongoDB not running
+➡ Start your MongoDB server:
+
+mongod
+
+
+To verify your database:
+Open MongoDB shell or Compass and run:
+
+show dbs
+use plp_bookstore
+show collections
+db.books.find()
+
+✨ Author
+
+Ivy Liz
+PLP Software Engineering – Full Stack MERN Track (Week 1 Assignment)

@@ -13,124 +13,124 @@ const collectionName = 'books';
 // Sample book data
 const books = [
   {
-    title: 'To Kill a Mockingbird',
-    author: 'Harper Lee',
-    genre: 'Fiction',
-    published_year: 1960,
-    price: 12.99,
+    title: 'The Spanish Love Deception',
+    author: 'Elena Armas',
+    genre: 'Romance',
+    published_year: 2021,
+    price: 17.99,
     in_stock: true,
-    pages: 336,
-    publisher: 'J. B. Lippincott & Co.'
+    pages: 448,
+    publisher: 'Simon & Schuster'
   },
   {
-    title: '1984',
-    author: 'George Orwell',
-    genre: 'Dystopian',
-    published_year: 1949,
+    title: 'Verity',
+    author: 'Colleen Hoover',
+    genre: 'Psychological thriller',
+    published_year: 2018,
     price: 10.99,
     in_stock: true,
-    pages: 328,
-    publisher: 'Secker & Warburg'
+    pages: 324,
+    publisher: 'Grand Central Publishing'
   },
   {
-    title: 'The Great Gatsby',
-    author: 'F. Scott Fitzgerald',
-    genre: 'Fiction',
-    published_year: 1925,
+    title: 'It ends with Us',
+    author: 'Colleen Hoover',
+    genre: 'Romance',
+    published_year: 2016,
     price: 9.99,
     in_stock: true,
-    pages: 180,
-    publisher: 'Charles Scribner\'s Sons'
+    pages: 376,
+    publisher: 'Atria Books'
   },
   {
-    title: 'Brave New World',
-    author: 'Aldous Huxley',
-    genre: 'Dystopian',
-    published_year: 1932,
+    title: 'It Begins with Us',
+    author: 'Colleen Hoover',
+    genre: 'Romance',
+    published_year: 2022,
     price: 11.50,
     in_stock: false,
-    pages: 311,
-    publisher: 'Chatto & Windus'
+    pages: 336,
+    publisher: 'Atria Books'
   },
   {
-    title: 'The Hobbit',
-    author: 'J.R.R. Tolkien',
-    genre: 'Fantasy',
-    published_year: 1937,
+    title: "Archer's Voice",
+    author: 'Mia Sheridan',
+    genre: 'Romance',
+    published_year: 2014,
     price: 14.99,
     in_stock: true,
-    pages: 310,
-    publisher: 'George Allen & Unwin'
+    pages: 377,
+    publisher: 'Hachette Book Group'
   },
   {
-    title: 'The Catcher in the Rye',
-    author: 'J.D. Salinger',
-    genre: 'Fiction',
-    published_year: 1951,
-    price: 8.99,
-    in_stock: true,
-    pages: 224,
-    publisher: 'Little, Brown and Company'
-  },
-  {
-    title: 'Pride and Prejudice',
-    author: 'Jane Austen',
+    title: 'Ugly Love',
+    author: 'Colleen Hoover',
     genre: 'Romance',
-    published_year: 1813,
+    published_year: 2014,
+    price: 12.99,
+    in_stock: true,
+    pages: 330,
+    publisher: 'Atria Books'
+  },
+  {
+    title: 'Twisted Love',
+    author: 'Ana Huang',
+    genre: 'Romance',
+    published_year: 2021,
     price: 7.99,
     in_stock: true,
-    pages: 432,
-    publisher: 'T. Egerton, Whitehall'
+    pages: 312,
+    publisher: 'Ana Huang'
   },
   {
-    title: 'The Lord of the Rings',
-    author: 'J.R.R. Tolkien',
-    genre: 'Fantasy',
-    published_year: 1954,
+    title: 'If we ever meet again',
+    author: 'Ana Huang',
+    genre: 'Romance',
+    published_year: 2020,
     price: 19.99,
     in_stock: true,
-    pages: 1178,
-    publisher: 'Allen & Unwin'
+    pages: 342,
+    publisher: 'Ana Huang'
   },
   {
-    title: 'Animal Farm',
-    author: 'George Orwell',
-    genre: 'Political Satire',
-    published_year: 1945,
+    title: '1000 Boy Kisses',
+    author: 'Tillie Cole',
+    genre: 'Young Adult Romance',
+    published_year: 2016,
     price: 8.50,
     in_stock: false,
-    pages: 112,
-    publisher: 'Secker & Warburg'
+    pages: 320,
+    publisher: 'Penguin Books Limited'
   },
   {
-    title: 'The Alchemist',
-    author: 'Paulo Coelho',
-    genre: 'Fiction',
-    published_year: 1988,
+    title: 'Me before you',
+    author: 'Jojo Moyes',
+    genre: 'Romance',
+    published_year: 2012,
     price: 10.99,
     in_stock: true,
     pages: 197,
-    publisher: 'HarperOne'
+    publisher: 'Pamela Dorman Books'
   },
   {
-    title: 'Moby Dick',
-    author: 'Herman Melville',
-    genre: 'Adventure',
-    published_year: 1851,
+    title: 'Anna and the french kiss',
+    author: 'Stephanie Perkins',
+    genre: 'Young adult',
+    published_year: 2010,
     price: 12.50,
     in_stock: false,
-    pages: 635,
-    publisher: 'Harper & Brothers'
+    pages: 372,
+    publisher: 'Dutton Juvenile'
   },
   {
-    title: 'Wuthering Heights',
-    author: 'Emily Brontë',
-    genre: 'Gothic Fiction',
-    published_year: 1847,
+    title: 'Haunting Adeline',
+    author: 'H.D Carlton',
+    genre: 'Fiction',
+    published_year: 2021,
     price: 9.99,
     in_stock: true,
-    pages: 342,
-    publisher: 'Thomas Cautley Newby'
+    pages: 185,
+    publisher: 'H.D Carlton'
   }
 ];
 
@@ -185,13 +185,13 @@ insertBooks().catch(console.error);
  *    db.books.find()
  *
  * 2. Find books by a specific author:
- *    db.books.find({ author: "George Orwell" })
+ *    db.books.find({ author: "Colleen Hoover" })
  *
- * 3. Find books published after 1950:
- *    db.books.find({ published_year: { $gt: 1950 } })
+ * 3. Find books published after 2018:
+ *    db.books.find({ published_year: { $gt: 2018 } })
  *
  * 4. Find books in a specific genre:
- *    db.books.find({ genre: "Fiction" })
+ *    db.books.find({ genre: "Romance" })
  *
  * 5. Find in-stock books:
  *    db.books.find({ in_stock: true })
